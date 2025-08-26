@@ -1,114 +1,27 @@
 import React from "react";
+import AcceptTask from "./AcceptTask";
+import CompleteTask from "./CompleteTask";
+import FailedTask from "./FailedTask";
+import NewTask from "./NewTask";
 
-const TaskList = () => {
+const TaskList = ({data}) => {
   return (
     <>
       <div id="tasklist" className="h-[55%]  flex items-center gap-5 mt-10 overflow-x-scroll">
-        <div className="w-[300px] h-full bg-red-400 rounded-lg shrink-0">
-          <div className="flex justify-between p-7">
-            <h3 className="text-white bg-red-600 font-bold p-2">High</h3>
-            <h3 className="p-2 text-sm text-white">25-Feb-2025</h3>
-          </div>
-          <div className="p-7">
-            <h1 className="text-3xl font-semibold text-white ">Make a youtube video</h1>
-            <p className="text-white text-sm mt-3 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-              aut maiores eveniet blanditiis repudiandae in odit earum at
-              incidunt dolorum ad pariatur alias esse qui fugiat quam beatae.
-              Excepturi, amet!
-            </p>
-          </div>
-        </div>
-        <div className="w-[300px] h-full bg-red-400 rounded-lg shrink-0">
-          <div className="flex justify-between p-7">
-            <h3 className="text-white bg-red-600 font-bold p-2">High</h3>
-            <h3 className="p-2 text-sm text-white">25-Feb-2025</h3>
-          </div>
-          <div className="p-7">
-            <h1 className="text-3xl font-semibold text-white ">Make a youtube video</h1>
-            <p className="text-white text-sm mt-3 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-              aut maiores eveniet blanditiis repudiandae in odit earum at
-              incidunt dolorum ad pariatur alias esse qui fugiat quam beatae.
-              Excepturi, amet!
-            </p>
-          </div>
-        </div>
-        <div className="w-[300px] h-full bg-red-400 rounded-lg shrink-0">
-          <div className="flex justify-between p-7">
-            <h3 className="text-white bg-red-600 font-bold p-2">High</h3>
-            <h3 className="p-2 text-sm text-white">25-Feb-2025</h3>
-          </div>
-          <div className="p-7">
-            <h1 className="text-3xl font-semibold text-white ">Make a youtube video</h1>
-            <p className="text-white text-sm mt-3 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-              aut maiores eveniet blanditiis repudiandae in odit earum at
-              incidunt dolorum ad pariatur alias esse qui fugiat quam beatae.
-              Excepturi, amet!
-            </p>
-          </div>
-        </div>
-        <div className="w-[300px] h-full bg-red-400 rounded-lg shrink-0">
-          <div className="flex justify-between p-7">
-            <h3 className="text-white bg-red-600 font-bold p-2">High</h3>
-            <h3 className="p-2 text-sm text-white">25-Feb-2025</h3>
-          </div>
-          <div className="p-7">
-            <h1 className="text-3xl font-semibold text-white ">Make a youtube video</h1>
-            <p className="text-white text-sm mt-3 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-              aut maiores eveniet blanditiis repudiandae in odit earum at
-              incidunt dolorum ad pariatur alias esse qui fugiat quam beatae.
-              Excepturi, amet!
-            </p>
-          </div>
-        </div>
-        <div className="w-[300px] h-full bg-red-400 rounded-lg shrink-0">
-          <div className="flex justify-between p-7">
-            <h3 className="text-white bg-red-600 font-bold p-2">High</h3>
-            <h3 className="p-2 text-sm text-white">25-Feb-2025</h3>
-          </div>
-          <div className="p-7">
-            <h1 className="text-3xl font-semibold text-white ">Make a youtube video</h1>
-            <p className="text-white text-sm mt-3 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-              aut maiores eveniet blanditiis repudiandae in odit earum at
-              incidunt dolorum ad pariatur alias esse qui fugiat quam beatae.
-              Excepturi, amet!
-            </p>
-          </div>
-        </div>
-        <div className="w-[300px] h-full bg-red-400 rounded-lg shrink-0">
-          <div className="flex justify-between p-7">
-            <h3 className="text-white bg-red-600 font-bold p-2">High</h3>
-            <h3 className="p-2 text-sm text-white">25-Feb-2025</h3>
-          </div>
-          <div className="p-7">
-            <h1 className="text-3xl font-semibold text-white ">Make a youtube video</h1>
-            <p className="text-white text-sm mt-3 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-              aut maiores eveniet blanditiis repudiandae in odit earum at
-              incidunt dolorum ad pariatur alias esse qui fugiat quam beatae.
-              Excepturi, amet!
-            </p>
-          </div>
-        </div>
-        <div className="w-[300px] h-full bg-red-400 rounded-lg shrink-0">
-          <div className="flex justify-between p-7">
-            <h3 className="text-white bg-red-600 font-bold p-2">High</h3>
-            <h3 className="p-2 text-sm text-white">25-Feb-2025</h3>
-          </div>
-          <div className="p-7">
-            <h1 className="text-3xl font-semibold text-white ">Make a youtube video</h1>
-            <p className="text-white text-sm mt-3 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-              aut maiores eveniet blanditiis repudiandae in odit earum at
-              incidunt dolorum ad pariatur alias esse qui fugiat quam beatae.
-              Excepturi, amet!
-            </p>
-          </div>
-        </div>
+        {data.tasks.map((elem, idx) => {
+        if (AcceptTask) {
+          return <AcceptTask key={idx} data={elem}/>
+        }
+        if (CompleteTask) {
+          return <CompleteTask key={idx} data={elem}/>
+        }
+        if (FailedTask) {
+          return <FailedTask key={idx} data={elem}/>
+        }
+        if (NewTask) {
+          return <NewTask key={idx} data={elem}/>
+        }
+        })}
       </div>
     </>
   );

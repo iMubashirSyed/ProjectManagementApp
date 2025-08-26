@@ -4,14 +4,12 @@ import Header from "../other/Header";
 import AllTasks from "../other/AllTasks";
 
 const AdminDashboard = () => {
-
   return (
-    <div className="h-screen w-screen p-7 bg-[#1C1C1C] ">
-        <Header />
-        <CreateTask />
-       <AllTasks />
-      </div>
- 
+    <div className="  w-screen p-7 bg-[#1C1C1C] ">
+      <Header />
+      <CreateTask />
+      <AllTasks />
+    </div>
   );
 };
 

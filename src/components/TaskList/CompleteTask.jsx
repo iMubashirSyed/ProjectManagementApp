@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CompleteTask = () => {
+const CompleteTask = ({data}) => {
   return (
 <div className="w-[300px] h-full bg-red-400 rounded-lg shrink-0">
           <div className="flex justify-between p-7">

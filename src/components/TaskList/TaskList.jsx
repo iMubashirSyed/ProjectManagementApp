@@ -9,16 +9,17 @@ const TaskList = ({data}) => {
     <>
       <div id="tasklist" className="h-[55%]  flex items-center gap-5 mt-10 overflow-x-scroll">
         {data.tasks.map((elem, idx) => {
-        if (AcceptTask) {
+          console.log(elem)
+        if (elem.active) {
           return <AcceptTask key={idx} data={elem}/>
         }
-        if (CompleteTask) {
+        if (elem.completed) {
           return <CompleteTask key={idx} data={elem}/>
         }
-        if (FailedTask) {
+        if (elem.failed) {
           return <FailedTask key={idx} data={elem}/>
         }
-        if (NewTask) {
+        if (elem.newTask) {
           return <NewTask key={idx} data={elem}/>
         }
         })}
